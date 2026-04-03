@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Idea to Live Landing Page — With AI Coding Agents</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Free Workshop PDF + Prompt Pack</p>
+      <h1>Go from rough idea to a live landing page — using AI coding agents</h1>
+      <p class="subhead">A step-by-step workshop that shows you how to turn your offer into a real, deployable site without writing code from scratch.</p>
+      <a href="#signup" class="btn">Get the Free Workshop Pack</a>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <div class="container">
+      <h2>You have an offer. You just need a page for it.</h2>
+      <p>You know what you want to sell, teach, or share — but getting from idea to a real, live page feels like a whole separate project. You've tried templates. You've stared at blank editors. You've thought about hiring someone.</p>
+      <p>What if you could sit down, describe your offer, and walk away with a finished landing page — ready to collect emails and deploy?</p>
+    </div>
+  </section>
+
+  <!-- Offer -->
+  <section class="offer">
+    <div class="container">
+      <h2>The Workshop PDF + Prompt Pack</h2>
+      <p>This free pack walks you through the exact process of building a landing page with an AI coding agent — from clarifying your offer to deploying a live site.</p>
+      <ul class="benefits-list">
+        <li><strong>Workshop PDF</strong> — The full walkthrough, from idea to deployment</li>
+        <li><strong>Prompt Pack</strong> — Copy-paste prompts that guide the AI to build your page</li>
+        <li><strong>Intake questions</strong> — So you know exactly what to feed the AI before you start</li>
+        <li><strong>Refinement prompts</strong> — To tighten copy, polish design, and integrate your email form</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits">
+    <div class="container">
+      <h2>What you'll walk away with</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>A real landing page</h3>
+          <p>Not a wireframe or a mockup — a deployable HTML/CSS site you own.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Clarity on your offer</h3>
+          <p>The intake process forces you to sharpen your audience, outcome, and CTA before you build.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>A repeatable workflow</h3>
+          <p>Use the same prompts and process every time you launch something new.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about">
+    <div class="container">
+      <h2>Who's behind this</h2>
+      <p>I spent four years as a language teacher in China, where I learned how to break complex ideas into clear, teachable steps. Now I'm a software engineer with six years of experience building technical and automation solutions at an automation startup.</p>
+      <p>This workshop combines both worlds: the educator's instinct for clarity with the engineer's ability to ship real things. I built this process because I wanted anyone with an offer to be able to go live — without needing to be a developer.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2>Common questions</h2>
+      <details>
+        <summary>Do I need to know how to code?</summary>
+        <p>No. The prompts do the heavy lifting. You just need to describe your offer and follow the steps.</p>
+      </details>
+      <details>
+        <summary>What AI tool does this work with?</summary>
+        <p>The workflow is designed for AI coding agents like Claude Code, but the prompts can be adapted for other tools.</p>
+      </details>
+      <details>
+        <summary>Is this really free?</summary>
+        <p>Yes. Join the email list and you'll get the workshop PDF and prompt pack delivered to your inbox.</p>
+      </details>
+      <details>
+        <summary>What kind of page will I end up with?</summary>
+        <p>A clean, mobile-friendly, single-page site with a headline, offer section, about section, and email signup — ready to deploy as static files.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Signup -->
+  <section class="signup" id="signup">
+    <div class="container">
+      <div class="signup-box" id="signup-box">
+        <h2>Get the free workshop pack</h2>
+        <p>Drop your email and I'll send you the workshop PDF and prompt pack — everything you need to build your first landing page with AI.</p>
+
+        <!-- Kit email signup form -->
+        <form id="signup-form" class="signup-form">
+          <input type="email" id="email-input" placeholder="you@example.com" required aria-label="Email address">
+          <button type="submit" class="btn">Send Me the Pack</button>
+        </form>
+        <p class="form-note">No spam. Unsubscribe anytime.</p>
+      </div>
+
+      <!-- Thank-you message (hidden by default) -->
+      <div class="thank-you" id="thank-you" hidden>
+        <h2>You're in!</h2>
+        <p>Check your inbox for the workshop PDF and prompt pack. If you don't see it in a few minutes, check your spam folder.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = document.getElementById('email-input').value;
+      fetch('https://api.convertkit.com/v3/forms/9282701/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          api_key: 'pwJ7eNVmWihwuhQanleuJg',
+          email: email
+        })
+      })
+      .then(function() {
+        document.getElementById('signup-box').hidden = true;
+        document.getElementById('thank-you').hidden = false;
+      })
+      .catch(function() {
+        // CORS may block the response even though the subscription succeeds
+        document.getElementById('signup-box').hidden = true;
+        document.getElementById('thank-you').hidden = false;
+      });
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 &middot; Built with AI coding agents</p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
